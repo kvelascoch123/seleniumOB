@@ -1,0 +1,36 @@
+{
+	"Organizacion":{
+			"1": { "Nombre" : "Museos"}
+			},	
+	"Terceros":{
+		"1":{
+			"Nombre" : "Consumidor Final",
+		}		
+	},
+
+	"Lineas":{
+		"1":{
+			"Producto":"1523101001-AGUA POTABLE-332",
+			},
+		"2":{
+			"Producto":"1523209001-SERVICIOS DE ASEO-332",
+			},
+		"3":{
+			"Producto":"1521106001-SALARIOS UNIFICADOS-332",
+			},
+		"4":{
+			"Producto":"1523607001-SERVICIOS TECNICOS ESPECIALIZADOS-344",
+			},
+
+	},
+	"Actividades":{
+		"1":{
+		"Actividad":"N/A",
+		},
+		"2":{
+		"Actividad":"7.02 Plan de Educación YAKU",
+		},	
+
+	}
+	
+}		

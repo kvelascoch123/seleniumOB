@@ -1,0 +1,30 @@
+{
+	"Organizacion":{
+			"1": { "Nombre" : "INNOVATIVA"}
+			},	
+	"Terceros":{
+		"1":{
+			"Nombre" : "SIDESOFT CIA. LTDA.",
+		},		
+	},
+
+	"Lineas":{
+		"1":{
+			"Producto":"0003 LT CYAN EPSON",
+			},
+		"2":{
+			"Producto":"0029  EPSON TX 410 NEGRO",
+			},
+
+	},
+	"Actividades":{
+		"1":{
+		"Actividad":"1-GESTION CAPACITACION",
+		},
+		"2":{
+		"Actividad":"3-GESTION PROYECTOS",
+		},	
+
+	}
+	
+}		

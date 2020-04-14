@@ -1,0 +1,57 @@
+{
+	"Organizacion":{
+			"1": { "Nombre" : "Museos"}
+			},	
+	"Terceros":{
+			"1":{ "Nombre" : "SIDESOFT CIA LTDA" }		
+	},
+	"DescripcionC":{
+			"1":{"Descripcion" : "servicios prestados"}		
+	},
+
+	"Actividades":{
+		"1":{
+		"Actividad":"N/A"
+		},
+		"2":{
+		"Actividad":"7.02 Plan de Educación YAKU"
+		},	
+		"3":{
+		"Actividad":"5.01.01 Exposición Tokyo"
+		},
+
+	},
+	"Lineas":{
+		"1":{
+			"Producto":"1120101007-ANTICIPO EMPLEADOS Y FUNC-332"
+			},
+		"2":{
+			"Producto":"1521204001-DECIMOCUARTO SUELDO-332"
+			},
+		"3":{
+			"Producto":"1523101001-AGUA POTABLE-332"
+			},
+		"4":{
+			"Producto":"1521306001-ALIMENTACION-332"
+			},
+
+	},
+	"Retenciones":{
+			"1":{"Retencion" : "RETENCIONES 4009"}		
+	},
+	"TiposComprobante":{
+		"1":{
+		"Comprobante":"01 - FACTURA"
+		},
+	
+
+	},
+	"CodigosSustento":{
+		"1":{
+		"Codigo":"01-CREDITO TRIBUTARIO PARA DECLARACION DE IVA (MENOS ACTIVOS FIJOS)"
+		},
+		
+
+	}
+	
+}		

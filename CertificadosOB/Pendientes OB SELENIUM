@@ -1,0 +1,5 @@
+PENDIENTES OB_SELENIUM
+
+* Factura proveedor => Numero de repeticiones, controlan el serial 000-000-0000000
+
+* Crear un json cuando realizo los pedidos de compra => Guardar los numeros de documentos y despues de Compras => consumir ese json y repetir el proceso la cantidad de numeros del array.

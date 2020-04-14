@@ -1,0 +1,55 @@
+{
+	"Organizacion":{
+			"1": { "Nombre" : "Museos"}
+			},	
+	"Terceros":{
+			"1":{ "Nombre" : "SIDESOFT CIA LTDA" }		
+	},
+	"DescripcionC":{
+			"1":{"Descripcion" : "servicios prestados"}		
+	},
+	"PaymentMethods":{
+		"1":{
+			"Pago" : "CHEQUE",
+			},
+		"2":{
+			"Pago" : "DEBITO",
+			},
+		"3":{
+			"Pago" : "TARJETA",
+			},
+		"4":{
+			"Pago" : "EFECTIVO",
+			},		
+	},
+	"Tarifas":{
+		"1":{
+			"Tarifa" : "Museo MCA",
+			},
+		"2":{
+			"Tarifa" : "Museo YAKU",
+			},
+		"3":{
+			"Tarifa" : "CONSUMO INTERNO",
+			},
+				
+	},
+	"Actividades":{
+		"1":{
+		"Actividad":"N/A"
+		},
+	
+	},
+	"Lineas":{
+		"1":{
+			"Producto":"Ácido muriático"
+			},
+		"2":{
+			"Producto":"Banda de transferencia"
+			},
+		
+
+	},
+	
+	
+}		

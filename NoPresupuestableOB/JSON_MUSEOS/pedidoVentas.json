@@ -1,0 +1,41 @@
+{
+	"Ambiente":{
+		"1":{
+			"Nombre" : "Museos",		
+		}	
+	},
+	"Terceros":{
+		"1":{
+			"Nombre" : "Consumidor Final",
+		}		
+	},
+
+	"Lineas":{
+		"1":{
+			"Producto":"AFRO DESCENDIENTES",
+			},
+		"2":{
+			"Producto":"HUMBOLDT",
+			},
+		"3":{
+			"Producto":"LIBRO LA OTRA TIERRA",
+			},
+		"4":{
+			"Producto":"TRES MIRADAS SOBRE EL PATRIMONIO. VER PARA CREER",
+			},
+		"5":{
+			"Producto":"LIBRO QUITO CON Q",
+			},
+
+	},
+	"Actividades":{
+		"1":{
+		"Actividad":"N/A",
+		},
+		"2":{
+		"Actividad":"7.02 Plan de Educación YAKU",
+		},	
+
+	}
+	
+}

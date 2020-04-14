@@ -1,0 +1,50 @@
+{
+	"Organizacion":{
+			"1": { "Nombre" : "Museos"}
+			},	
+	"Terceros":{
+		"1":{
+			"Nombre" : "ALEJANDRA BELEN ROBLES HEREDIA",
+		}		
+	},
+	"PaymentMethods":{
+		"1":{
+			"Pago" : "TRANSFERENCIA",
+			},
+		"2":{
+			"Pago" : "EFECTIVO",
+			},
+	},
+
+	"Productos":{
+		"1":{ 
+			"Producto": "ADMINISTRATIVO - ADMINISTRATIVO",	
+			},
+	},
+	"Actividades":{
+		"1":{
+			"Actividad":"1-GESTION CAPACITACION",
+			},
+	},
+	"FuenteFinanciamiento":{
+			"1":{
+				"Financiamiento":"4.1-ADMINISTRATIVO",
+				},
+		},
+	"CodesHash":{ 
+		"1":{
+			"Codigo":"SIPRES0000",
+		},
+	},
+	"LineaCertificado":{
+		"1":{
+			"Certificado":"634.06.06 - Honorarios por Contratos Civiles de Servicios",
+		},
+	},
+	"PartidaPresupuestaria":{
+		"1":{
+		"Linea":"4-GESTION ADMINISTRATIVA", 
+		},
+	},
+	
+}		

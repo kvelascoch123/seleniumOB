@@ -1,0 +1,65 @@
+{
+	"Organizacion":{
+			"1": { "Nombre" : "INNOVATIVA"}
+			},	
+	"Terceros":{
+			"1":{ "Nombre" : "ALEJANDRA BELEN ROBLES HEREDIA" }		
+	},
+	"DescripcionC":{
+			"1":{"Descripcion" : "servicios prestados"}		
+	},
+
+	"Actividades":{
+			"1":{
+			"Actividad":"1-GESTION CAPACITACION",
+			},
+
+	},
+	"Lineas":{
+		"1":{ 
+			"Producto": "ADMINISTRATIVO",	
+			},
+
+	},
+	"Retenciones":{
+			"1":{"Retencion" : "COMPROBANTE DE RETENCION"}		
+	},
+	"TiposComprobante":{
+		"1":{
+		"Comprobante":"01 - FACTURA"
+		},
+	},
+	"CodigosSustento":{
+		"1":{
+		"Codigo":"02-COSTO O GASTO PARA DECLARACION DE IR (MENOS ACTIVOS FIJOS)"
+		},
+		
+	},
+	"FuenteFinanciamiento":{
+			"1":{
+				"Financiamiento":"4.1-ADMINISTRATIVO",
+				},
+		},
+	"CodesHash":{
+		"1":{
+			"Codigo":"SIPRES0000",
+		},
+	},
+	"LineaCertificado":{
+		"1":{
+			"Certificado":"634.06.06 - Honorarios por Contratos Civiles de Servicios",
+		},
+	},
+	"PartidaPresupuestaria":{
+		"1":{
+		"Linea":"530606 HONORARIOS POR CONTRATO CIVILES DE SERVICIOS",
+		},
+	},
+	"Productos":{
+		"1":{ 
+			"Producto": "4-GESTION ADMINISTRATIVA",	
+			},
+	
+	}		
+}
+

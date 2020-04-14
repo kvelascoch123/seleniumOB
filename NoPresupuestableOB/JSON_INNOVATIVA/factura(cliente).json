@@ -1,0 +1,47 @@
+{
+	"Organizacion":{
+			"1": { "Nombre" : "INNOVATIVA"}
+			},	
+	"Terceros":{
+			"1":{ "Nombre" : "SIDESOFT CIA. LTDA." }		
+	},
+	"DescripcionC":{
+			"1":{"Descripcion" : "servicios prestados"}		
+	},
+	"PaymentMethods":{
+		"1":{
+			"Pago" : "TRANSFERENCIA",
+			},
+		"2":{
+			"Pago" : "EFECTIVO",
+			},	
+	},
+	"Tarifas":{
+		"1":{
+			"Tarifa" : "VENTA-DOLARES",
+			},
+				
+	},
+
+	"Actividades":{
+		"1":{
+		"Actividad":"1-GESTION CAPACITACION"
+		},
+	
+	},
+	"Lineas":{
+		"1":{
+			"Producto":"10 SERVICIOS DE ALIMENTACION "
+			},
+		"2":{
+			"Producto":"1.1.014-COMMUNITY MANAGER"
+			},
+		"3":{
+			"Producto":"1.2.011-EXAMEN DE CERTIFICACION CISCO"
+			},
+
+
+	},
+	
+	
+}		

@@ -1,0 +1,31 @@
+{
+	"Ambiente":{
+		"1":{
+			"Nombre" : "Innovativa",		
+		}	
+	},
+	"Terceros":{
+		"1":{
+			"Nombre" : "SIDESOFT CIA. LTDA.",
+		}		
+	},
+
+	"Lineas":{
+		"1":{
+			"Producto":"1.1.007-SPSS INTERMEDIO",
+			},
+		"2":{
+			"Producto":"1.2.011-EXAMEN DE CERTIFICACION CISCO",
+			},
+		"3":{
+			"Producto":"1.3.027-EXCEL BASICO",
+			},
+
+	},
+	"Actividades":{
+		"1":{
+		"Actividad":"1-GESTION CAPACITACION",
+		},
+	}
+	
+}

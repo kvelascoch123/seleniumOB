@@ -1,0 +1,34 @@
+{
+
+	"Terceros":{
+		"1":{
+			"Nombre":"SELENIUM DORIS CRIOLLO ",
+			"DNI":"1722489281",
+			"Email":"dcriollo@gmail",
+			"Direccion1":"Norte",
+			"Direccion2":"Norte"
+		},
+		"2":{
+			"Nombre":"SELENIUM KEVIN VELASCO",
+			"DNI":"1726754789",
+			"Email":"kvelasco@gsidesoft.com.ec",
+			"Direccion1":"Centro",
+			"Direccion2":"Centro"
+		},
+		"3":{
+			"Nombre":"SELENIUM DIEGO GUALLASAMIN",
+			"DNI":"1715187322",
+			"Email":"dguallasamin@gsidesoft.com.ec",
+			"Direccion1":"Norte",
+			"Direccion2":"Centro"
+		},
+		"4":{
+			"Nombre":"SELENIUM ANDRES MONTENEGRO",
+			"DNI":"1718053885",
+			"Email":"amontenegro@gsidesoft.com.ec",
+			"Direccion1":"Norte",
+			"Direccion2":"Centro"
+		},
+	},
+	
+}

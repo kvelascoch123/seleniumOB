@@ -1,0 +1,24 @@
+{
+	"Ambiente":{
+		"1":{
+			"Nombre" : "Museos",		
+		}	
+	},
+	"Terceros":{
+		"1":{
+			"Nombre" : "SIDESOFT CIA LTDA",
+		}		
+	},
+
+	"DescripcionC":{
+			"1":{"Descripcion" : "Albaran (proveedor)"}		
+	},
+	"Almacenes":{
+			"1":{"Almacen" : "ALMACEN FMC"}		
+	},
+	"NumeroPedidos":{
+			"1":{"Pedido" : "2020-EX-10126 - 02-03-2020 - 4.00"}		
+	},
+	
+	
+}
