@@ -24,7 +24,7 @@ public class PedidoCompra {
 		System.out.println("*************************************");
 		System.out.println("******* PEDIDO DE COMPRA ************"); // en MUSEOS el item se llama => COMPROMISO
 		System.out.println("*************************************"); // EN PROCESO
-		driver.manage().window().maximize();
+		//driver.manage().window().maximize();
 		helper.sleep(6);
 		
 		//Determinar si es museos ya q pedido de compra es == COMPROMISO solo en este ambiente
@@ -43,19 +43,13 @@ public class PedidoCompra {
 				formulario(driver, urlOB);
 			}
 		}
-	
-		}
-	
+	}
 	public static void formulario(WebDriver driver, String urlOB) {	
-
 		Helpers helper = new Helpers();
 		helper.cargarHtmlFormulario(driver); 
-		
 		//Nuevo 
 		driver.findElement(By.xpath("//*[@class='OBToolbarIconButton_icon_newDoc OBToolbarIconButton']")).click();
-		
 		helper.sleep(2);
-
 		int attemptsBC = 0;
 		while (attemptsBC < 2) {
 			try {
@@ -255,15 +249,10 @@ public class PedidoCompra {
 	} // lee archivo
 	// VALIDAR EL ERROR Y VOLVER A EJECUTAR EL PROCESO
 	helper.sleep(2);
-	if(driver.findElements(By.xpath("//*[text()='Error']")).size() >= 1) {
-		// VALIDAR CAMBIAR LA CEDULA
-        System.out.println("Error en las lineas, cancelar lineas pedidas y volver agregar lineas");
-        driver.findElement(By.xpath("//a[text()='cancel all pending changes']")).click();
-        agregarLineas(driver, UrlParam);
-		}else {
-			helper.sleep(2);
+
 			guardarFormulario(driver, UrlParam);
-		}
+				
+			
 	}
 	
 	public static void guardarFormulario(WebDriver driver, String UrlParam) {

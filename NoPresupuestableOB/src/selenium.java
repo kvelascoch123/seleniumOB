@@ -17,12 +17,12 @@ public class selenium {
 		seleniumStart();
 	} 
  
-	// ************** SELENIUM SATRT ***************************
+	// ************** SELENIUM SATRT ONE ***************************
 	public static void seleniumStart() throws InterruptedException {
 		WebDriver driver = new ChromeDriver();
 		// Ambiente.","http://192.168.1.28:8080/museospreprod");
 		String urlOB = JOptionPane.showInputDialog(null, "Ingresar el Url del Ambiente.",
-				"http://186.69.209.150:8071/museos");
+				"http://186.69.209.147:9090/museos");
 	
 		String userOB = JOptionPane.showInputDialog(null, "User", "Openbravo");
 		String passwordOB = JOptionPane.showInputDialog(null, "Conraseña del Ambiente", "1234");

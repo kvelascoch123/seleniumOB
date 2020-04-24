@@ -24,7 +24,7 @@ public class Compras {
 		System.out.println("*************************************");
 		System.out.println("************ COMPRAS ****************"); // HECHO EN MUSEOS
 		System.out.println("*************************************");
-		driver.manage().window().maximize();
+		//driver.manage().window().maximize();
 		helper.sleep(6);
 		urlParam = urlOB;
 		
@@ -47,8 +47,20 @@ public class Compras {
 	}
 	public void asignarDatos(WebDriver driver, String UrlParam, int repeticion){
 		System.out.println("Llenando datos del formulario.");
+		int attemptsBCDA = 0;
+		while (attemptsBCDA < 2) {
+			try {
+				driver.findElement(By.xpath("//*[@class='OBToolbarIconButton_icon_newDoc OBToolbarIconButton']")).click();
+				helper.sleep(3);
+				break;
+			} catch (Exception e) { 
+			}
+			attemptsBCDA++;			
+		} 
 		JSONParser parser = new JSONParser();
 		Object obj;
+		helper.sleep(2);
+
 		try {
 			obj = parser.parse(new FileReader("compras.json"));
 			JSONObject jsonObject = (JSONObject) obj; // transformalo el objeto leido a objetoJSON
@@ -69,27 +81,26 @@ public class Compras {
 			JSONObject innerObjectCodigosSustento = (JSONObject) jsonObject.get("CodigosSustento");// key padre
 			int valorCodigosSustento = (int) Math.floor(Math.random()*innerObjectCodigosSustento.size()+1); //cualquier tipo de actividades
 			JSONObject posicionCodigosSustento = (JSONObject) innerObjectCodigosSustento.get(""+valorCodigosSustento+"");// posicion data tercero
-	
-			
-			int attemptsBCDA = 0;
-			while (attemptsBCDA < 2) {
-				try {
-					driver.findElement(By.xpath("//*[@class='OBToolbarIconButton_icon_newDoc OBToolbarIconButton']")).click();
-					helper.sleep(3);
-					break;
-				} catch (Exception e) { 
-				}
-				attemptsBCDA++;			
-		} 
 
 			int attemptsB = 0;
 			while (attemptsB < 2) {
 				try {
+					helper.myScroll(driver, "//textarea[@name='description']");
 					helper.sleep(1);
 					WebElement inpDescripcion = driver.findElement(By.xpath("//textarea[@name='description']"));
 					inpDescripcion.clear();
 					inpDescripcion.sendKeys((String) posicionDescripcionC.get("Descripcion"));
 					inpDescripcion.submit();
+					helper.sleep(1);
+					break;
+				} catch (Exception e) {
+				}
+				attemptsB++;
+			}
+			int attemptsBCAS = 0;
+			while (attemptsBCAS < 2) {
+				try {
+					helper.myScroll(driver, "//*[@name='businessPartner' and @class='OBFormFieldSelectInputRequiredError']");
 					helper.sleep(1);
 					WebElement inpTercero = driver.findElement(
 							By.xpath("//*[@name='businessPartner' and @class='OBFormFieldSelectInputRequiredError']"));
@@ -97,23 +108,29 @@ public class Compras {
 					inpTercero.sendKeys((String) posicionTerceros.get("Nombre"));
 					inpTercero.sendKeys(Keys.ENTER);
 					helper.sleep(1);
-					helper.sleep(1);
-					
-					helper.sleep(1);
 					break;
 				} catch (Exception e) {
 				}
-				attemptsB++;
+				attemptsBCAS++;
 			}
-
-			int attemptsBCD = 0;
-			while (attemptsBCD < 3) {
+			int attemptsBCO = 0;
+			while (attemptsBCO < 2) {
 				try {
 					helper.myScroll(driver, "//div[@class='OBViewForm']//input[@type='TEXT' and @name='orderReference']");
-				
-					if(repeticion < 10) {
-					driver.findElement(By.xpath("//div[@class='OBViewForm']//input[@type='TEXT' and @name='orderReference']")).sendKeys("000-000-00000000" +repeticion);
-					}
+					helper.sleep(1);
+					WebElement inpOrderReference = driver.findElement(By.xpath("//div[@class='OBViewForm']//input[@type='TEXT' and @name='orderReference']"));
+					inpOrderReference.clear();
+					inpOrderReference.sendKeys("000-000-00000000" +repeticion);
+					inpOrderReference.sendKeys(Keys.ENTER);
+					//driver.findElement(By.xpath("//div[@class='OBViewForm']//input[@type='TEXT' and @name='orderReference']")).sendKeys("000-000-00000000" +repeticion);
+					break;
+				} catch (Exception e) { 
+				}
+				attemptsBCO++;			
+		} 
+			int attemptsBCD = 0;
+			while (attemptsBCD < 2) {
+				try {
 					// SERIAL PARA EL N° de Factura
 					Random rnd = new Random();
 					int serialAuth = rnd.nextInt() * 9+1; 
@@ -162,6 +179,15 @@ public class Compras {
 					inpActividad.clear();
 					inpActividad.sendKeys((String) posicionActividad.get("Actividad"));
 					inpActividad.sendKeys(Keys.ENTER);
+					break;
+				} catch (Exception e) {
+				}
+				attemptsBCA++;
+			}
+			int attemptsBCAX = 0;
+			while (attemptsBCAX < 2) {
+				helper.myScroll(driver, "//*[text()='No Presupuestable']//span");
+				try {
 					helper.myScroll(driver, "//*[text()='No Presupuestable']//span");
 					helper.sleep(1);
 					WebElement checkNoPresupuestable = driver.findElement(By.xpath("//*[text()='No Presupuestable']//span"));
@@ -175,7 +201,7 @@ public class Compras {
 					break;
 				} catch (Exception e) {
 				}
-				attemptsBCA++;
+				attemptsBCAX++;
 			}
 
 			
@@ -270,7 +296,7 @@ public class Compras {
 						try {
 							int valorCantidadProduct = (int) Math.floor(Math.random()*6+1); // 1 a 7
 							helper.sleep(1); 
-							WebElement inpCantidad = driver.findElement(By.xpath("//*[@name='unitPrice' and @class='OBFormFieldNumberInputRequired']"));
+							WebElement inpCantidad = driver.findElement(By.xpath("//*[@name='invoicedQuantity' and @class='OBFormFieldNumberInputRequired']"));
 							inpCantidad.sendKeys(""+valorCantidadProduct+"");
 							if(i < cantidadLineas){
 								inpCantidad.sendKeys(Keys.ENTER); 	
@@ -312,7 +338,7 @@ public class Compras {
 		helper.sleep(4); // cargando...
 		//driver.findElement(By.xpath("//*[@class='OBToolbarTextButton' and text()='C']//u[text()='o']")).click();
 		driver.findElement(By.xpath("//td[@class='OBToolbarTextButtonParent'  and text()='C']")).click();
-		helper.sleep(2); // cargando...
+		helper.sleep(3); // cargando...
 		driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@name='OBClassicPopup_iframe']"))); // IFRAME 1
 		driver.switchTo().frame(driver.findElement(By.xpath("//*[@id='MDIPopupContainer' and @name='process']"))); // IFRAME 2
 		helper.sleep(1); // cargando...

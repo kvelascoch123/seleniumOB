@@ -23,18 +23,11 @@
 	},
 	"Lineas":{
 		"1":{
-			"Producto":"1120101007-ANTICIPO EMPLEADOS Y FUNC-332"
+			"Producto":"Cable HDMI 2 metros"
 			},
 		"2":{
-			"Producto":"1521204001-DECIMOCUARTO SUELDO-332"
+			"Producto":"Cable VGA 2 metros 15 pines"
 			},
-		"3":{
-			"Producto":"1523101001-AGUA POTABLE-332"
-			},
-		"4":{
-			"Producto":"1521306001-ALIMENTACION-332"
-			},
-
 	},
 	"Retenciones":{
 			"1":{"Retencion" : "RETENCIONES 4009"}		

@@ -267,6 +267,7 @@ public class PedidoVentas {
 		helper.myScroll(driver,"//*[@class='OBFormFieldSelectInputRequired' and @name='document_action']");
 		WebElement inpActionDocument = driver.findElement(By.xpath("//*[@class='OBFormFieldSelectInputRequired' and @name='document_action']"));
 		inpActionDocument.sendKeys("Process Received Payment(s) and Deposit");
+		helper.sleep(1);
 		inpActionDocument.sendKeys(Keys.ENTER);
 		helper.sleep(2);
 		driver.findElement(By.xpath("//*[@class='OBFormButton' and text()='Done']")).click();

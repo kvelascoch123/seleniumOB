@@ -253,7 +253,7 @@ public class FacturaCliente {
 					int attemptsBP = 0;
 					while (attemptsBP < 2) {
 						try {
-							int valorCantidadProduct = (int) Math.floor(Math.random()*6+1); // 1 a 7
+							int valorCantidadProduct = (int) Math.floor(Math.random()*6+2); // 1 a 7
 							helper.sleep(2); 
 							WebElement inpPrecio = driver
 									.findElement(By.xpath("//*[@name='unitPrice' and @class='OBFormFieldNumberInputRequired']"));
