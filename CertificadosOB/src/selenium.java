@@ -22,7 +22,7 @@ public class selenium {
 		String urlOB = JOptionPane.showInputDialog(null, "Ingresar el Url del Ambiente.",
 				//"http://192.168.1.28:8080/museospreprod");
 				//	"http://186.69.209.150:8071/museos");
-				"http://localhost:8080/museos");
+				"http://186.69.209.147:9090/museos");
 		String userOB = JOptionPane.showInputDialog(null, "User", "Openbravo");
 		String passwordOB = JOptionPane.showInputDialog(null, "Conraseña del Ambiente", "1234");
 		String valor = procesosSelenium(); // DETERMINAR EL PROCESO A REALIZAR

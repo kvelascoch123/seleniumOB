@@ -30,7 +30,7 @@ public class Compras {
 		System.out.println("*************************************");
 		System.out.println("************ COMPRAS ****************"); // HECHO EN MUSEOS
 		System.out.println("*************************************");
-		driver.manage().window().maximize();
+		//driver.manage().window().maximize();
 		helper.sleep(2);
 		urlParam = urlOB;
 		helper.buscarVentana(driver,"Factura (Proveedor)");
@@ -153,7 +153,7 @@ public class Compras {
 					}
 					
 					Random rnd = new Random();
-					int serialAuth = rnd.nextInt() * 9+1; 
+					int serialAuth = rnd.nextInt() * 10+1; 
 					WebElement inpNumAuth = driver.findElement(By.xpath("//div[@class='OBViewForm']//input[@type='TEXT' and @name='sswhNroauthorization']"));
 					inpNumAuth.clear();
 					inpNumAuth.sendKeys(""+serialAuth+"");

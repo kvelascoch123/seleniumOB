@@ -4,46 +4,52 @@
 			},	
 	"Terceros":{
 		"1":{
-			"Nombre" : "ALEJANDRA BELEN ROBLES HEREDIA",
+			"Nombre" : "MALDONADO VELASCO JOSHEP DAVID",
 		}		
 	},
 	"PaymentMethods":{
 		"1":{
-			"Pago" : "TRANSFERENCIA",
+			"Pago" : "CHEQUE",
 			},
 		"2":{
-			"Pago" : "EFECTIVO",
+			"Pago" : "DEBITO",
 			},
+		"3":{
+			"Pago" : "TARJETA",
+			},
+		"4":{
+			"Pago" : "EFECTIVO",
+			},		
 	},
 
 	"Productos":{
 		"1":{ 
-			"Producto": "ADMINISTRATIVO - ADMINISTRATIVO",	
+			"Producto": "12 GESTIÓN OPERATIVA FMC",	
 			},
 	},
 	"Actividades":{
 		"1":{
-			"Actividad":"1-GESTION CAPACITACION",
+			"Actividad":"12.03 Contratación de Servicios FMC",
 			},
 	},
 	"FuenteFinanciamiento":{
 			"1":{
-				"Financiamiento":"4.1-ADMINISTRATIVO",
+				"Financiamiento":"M1",
 				},
 		},
-	"CodesHash":{ 
+	"CodesHash":{
 		"1":{
-			"Codigo":"A0DPB70LD5",
+			"Codigo":"RVJ013SCFA",
 		},
 	},
 	"LineaCertificado":{
 		"1":{
-			"Certificado":"634.06.06 - Honorarios por Contratos Civiles de Servicios",
+			"Certificado":"770201 SEGUROS",
 		},
 	},
 	"PartidaPresupuestaria":{
 		"1":{
-		"Linea":"0017 DRUM DE COLOR NEGRO", 
+		"Linea":"1524001001 - SEGUROS",
 		},
 	},
 	

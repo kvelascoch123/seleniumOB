@@ -20,7 +20,7 @@ public class Pagos {
 	Helpers helper = new Helpers();
 	String urlParam;  
 	public void generarPago(WebDriver driver, String urlOB) throws InterruptedException { // Pedido de Venta => FACTURA LIBRO
-		/*System.out.println("*************************************");
+		System.out.println("*************************************");
 		System.out.println("************** Pagos ****************"); // HECHO EN MUSEOS
 		System.out.println("*************************************");
 		driver.manage().window().maximize();
@@ -57,7 +57,7 @@ public class Pagos {
 
 		helper.sleep(5);
 		formulario(driver, urlOB);
-	*/ 
+		/*
 		System.out.println("*************************************");
 		System.out.println("************** Pagos ****************"); // HECHO EN MUSEOS
 		System.out.println("*************************************");
@@ -71,7 +71,8 @@ public class Pagos {
 		Thread.sleep(1000);
 		WebElement valor = driver.findElement(By.xpath("//input[@name='value']"));
 		// Buscar una etiqueta hija dentro la etiqueta padre
-		valor.findElement(By.xpath("//*[text()='Pago']")).click();
+		valor.findElement(By.xpath("//*[text()='Pago']")).click(); 
+		*/
 		helper.sleep(3);
 		formulario(driver, urlOB);
 	}//input[@name='referenceNo' and @class='OBFormFieldInputRequired']

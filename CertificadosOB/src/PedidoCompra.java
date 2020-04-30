@@ -31,12 +31,13 @@ public class PedidoCompra {
 	public static void generarPedidoCompra(WebDriver driver, String urlOB) throws InterruptedException { // Pedido de
 																											// Venta =>
 																											// FACTURA
-		System.out.println("*****************************************************************************");
-		System.out.println("*************************    PEDIDO DE COMPRA       ******************");
-		System.out.println("*****************************************************************************");																								// LIBRO
-
+																											// LIBRO
+		System.out.println("**************************************************");
+		System.out.println("******* PEDIDO DE COMPRA ó Compromiso************"); // en MUSEOS el item se llama =>
+																					// COMPROMISO
+		System.out.println("**************************************************"); // EN PROCESO
 		driver.manage().window().maximize();
-		helper.sleep(2);
+		helper.sleep(6);
 
 		// Determinar si es museos ya q pedido de compra es == COMPROMISO solo en este
 		// ambiente
@@ -80,8 +81,7 @@ public class PedidoCompra {
 																										// tercero
 			// Actividades
 			JSONObject innerObjectActividades = (JSONObject) jsonObject.get("Actividades");// key padre
-			int valorActividades = (int) Math.floor(Math.random() * innerObjectActividades.size() + 1); // cualquier
-																										// tercero
+			int valorActividades = (int) Math.floor(Math.random() * innerObjectActividades.size() + 1); // cualquier																						// tercero
 			JSONObject posicionActividades = (JSONObject) innerObjectActividades.get("" + valorActividades + "");// posicion
 																													// data
 																													// tercero
@@ -125,7 +125,7 @@ public class PedidoCompra {
 					numeroDocumento = numDocumento.replaceAll("[<->]", "");
 					System.out.println("N° DOCUMENTO: " + numDocumento.replaceAll("[<->]", ""));
 					helper.sleep(1);
-				//	System.out.print(obj);
+					System.out.print(obj);
 					// siempre despues de haber asignado un valor asigno el tercero pues su etiqueta
 					// cambia
 					helper.sleep(2);
@@ -149,7 +149,7 @@ public class PedidoCompra {
 					inpProducto.clear();
 					inpProducto.sendKeys((String) posicionProducto.get("Producto"));
 					inpProducto.sendKeys(Keys.ENTER);
- 
+
 					helper.sleep(1);
 					helper.myScroll(driver, "//*[@class='OBFormFieldInput' and @name='sfbHashCode']");
 					WebElement inpHashCode = driver
@@ -220,7 +220,6 @@ public class PedidoCompra {
 		if (driver.findElements(By.xpath("//*[text()='Create One']")).size() > 0) {
 			System.out.println("Listo para asignar lineas...");
 			agregarLineas(driver, UrlParam, numeroDocumento);
-			// siguientes listado de procesos
 		} else {
 			System.out.println("Error en el formulario cabecera repetir el proceso");
 			driver.navigate().to(UrlParam);
@@ -235,8 +234,8 @@ public class PedidoCompra {
 	}
 
 	public static void agregarLineas(WebDriver driver, String UrlParam, String numeroDocumento) { // agregar productos
-		System.out.println("*** DATOS DEL FORMULARIO LINEAS.***");
-		helper.sleep(2); // cargando...
+		System.out.println("DATOS DE LAS LINEAS.");
+		helper.sleep(3); // cargando...
 
 		int attemptsB = 0;
 		while (attemptsB < 2) {
@@ -258,7 +257,7 @@ public class PedidoCompra {
 			JSONObject jsonObject = (JSONObject) obj; // transformalo el objeto leido a objetoJSON
 			JSONObject innerObjectLineas = (JSONObject) jsonObject.get("Productos");// key padre
 			// REPETIR PROCESO PARA ASIGNAR VARIOS PRODUCTOS - LINES
-	
+			System.out.println("CONTANDO TIQUETAS HTML");
 			// Codigo HASH
 			JSONObject innerObjectCodesHash = (JSONObject) jsonObject.get("CodesHash");// key padre
 			int valorCodesHash = (int) Math.floor(Math.random() * innerObjectCodesHash.size() + 1); // cualquier tercero
@@ -305,8 +304,14 @@ public class PedidoCompra {
 			int attemptsBSS = 0;
 			while (attemptsBSS < 3) {
 				try {
-					WebElement inpPrice = driver.findElement(By.xpath(
+					/*WebElement inpPrice = driver.findElement(By.xpath(
 							"//*[@class='OBTabSetChildContainer' and @eventproxy='isc_OBTabSetChild_0_paneContainer' ]//form[@method='POST']//input[@name='unitPrice']"));
+					inpPrice.clear();
+					inpPrice.sendKeys("" + valorPrice + "");
+					helper.sleep(2);
+					inpPrice.sendKeys(Keys.ENTER);*/
+					WebElement inpPrice = driver.findElement(By.xpath(
+							"//*[@class='OBTabSetChildContainer' and @eventproxy='isc_OBTabSetChild_0_paneContainer' ]//form[@method='POST']//input[@name='grossUnitPrice']"));
 					inpPrice.clear();
 					inpPrice.sendKeys("" + valorPrice + "");
 					helper.sleep(2);
@@ -316,6 +321,8 @@ public class PedidoCompra {
 				}
 				attemptsBSS++;
 			}
+
+			helper.sleep(1);
 			helper.sleep(1);
 			// ********** SE CREA EL JSON PARA TOMAR VALORES EL
 			// FACTURA-PROVEEDOR************
@@ -422,10 +429,10 @@ public class PedidoCompra {
 				attemptsBG++;
 			}
 
-			System.out.println("CERTIFICADO: " + (String) posicionLineaCertificado.get("Certificado"));
-			System.out.println("FINANCIAMIENTO: " +(String) posicionFinanciamiento.get("Financiamiento"));
-			System.out.println("CANTIDAD: " + valorQuantyti );
-			System.out.println("PRECIO UNIDAD:" + valorPrice);
+			System.out.println((String) posicionLineaCertificado.get("Certificado"));
+			System.out.println((String) posicionFinanciamiento.get("Financiamiento"));
+			System.out.println("CANTIDAD" + valorQuantyti );
+			System.out.println("PRECIO UNIDAD" + valorPrice);
 
 		} catch (FileNotFoundException e1) {
 			// TODO Auto-generated catch block
