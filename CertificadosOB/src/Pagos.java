@@ -23,7 +23,7 @@ public class Pagos {
 		System.out.println("*************************************");
 		System.out.println("************** Pagos ****************"); // HECHO EN MUSEOS
 		System.out.println("*************************************");
-		driver.manage().window().maximize();
+		//driver.manage().window().maximize();
 		helper.sleep(6);
 		urlParam = urlOB;
 		
@@ -153,16 +153,6 @@ public class Pagos {
 	public static void completarPago(WebDriver driver, Helpers helper, String UrlParam) {
 	
 		helper.sleep(3);
-	//	int countA = driver.findElements(By.xpath("//*[@class='OBGridFilterFunnelIcon']//img[@name='isc_1DVicon']")).size();
-	//	int countAB = driver.findElements(By.xpath("//*[@class='OBGridFilterFunnelIcon']//img[@src='http://186.69.209.150:8071/museos/web/org.openbravo.userinterface.smartclient/openbravo/skins/Default/org.openbravo.client.application/images/grid/funnel-icon.png']")).size();
-	//	int countAV = driver.findElements(By.xpath("//div[@eventproxy='isc_OBPickAndExecuteGrid_0filterEditor' and @class='OBGridFilterBase']//*[@class='OBGridFilterFunnelIcon']//img[@src='http://186.69.209.150:8071/museos/web/org.openbravo.userinterface.smartclient/openbravo/skins/Default/org.openbravo.client.application/images/grid/funnel-icon.png']")).size();
-	//	int countAC = driver.findElements(By.xpath("//*[@class='OBGridFilterFunnelIcon']//img")).size();
-
-		
-	//	System.out.println(countA);
-	//	System.out.println(countAB);
-	//	System.out.println(countAV);
-	//	System.out.println(countAC);
 
 		driver.findElement(By.xpath("//div[@eventproxy='isc_OBPickAndExecuteGrid_0filterEditor' and @class='OBGridFilterBase']//*[@class='OBGridFilterFunnelIcon']//img[@src='"+UrlParam+"/web/org.openbravo.userinterface.smartclient/openbravo/skins/Default/org.openbravo.client.application/images/grid/funnel-icon.png']")).click();
 		helper.sleep(2);

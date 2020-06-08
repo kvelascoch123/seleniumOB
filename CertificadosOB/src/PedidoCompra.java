@@ -45,7 +45,7 @@ public class PedidoCompra {
 		String ambienteEspecifico = "mus";
 		boolean resultado = actualUrl.contains(ambienteEspecifico); // determinar si es museo u otro ambiente
 		if (resultado) {// es un ambiente de museos
-			helper.buscarVentana(driver, "Pedido de Compra");
+			helper.buscarVentana(driver, "Compromiso");
 			formulario(driver, urlOB);
 		} else { // es otro ambiente si se llama el item PEDIDO DE COMPRA
 			helper.buscarVentana(driver, "Pedido de Compra");

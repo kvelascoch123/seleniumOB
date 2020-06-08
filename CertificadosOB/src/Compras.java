@@ -226,7 +226,8 @@ public class Compras {
 					inpDocumentoRetencion.clear();
 					inpDocumentoRetencion.sendKeys((String)posicionDocsRetencion.get("Retencion"));
 					inpDocumentoRetencion.sendKeys(Keys.ENTER);
-					*/helper.sleep(1);
+					*/
+					helper.sleep(1);
 					WebElement inpTipoComprobante = driver.findElement(By.xpath("//div[@class='OBViewForm']//input[@type='TEXT' and @name='sswhLivelihood']"));
 					inpTipoComprobante.clear();
 					inpTipoComprobante.sendKeys((String)posicionTiposComprobante.get("Comprobante"));

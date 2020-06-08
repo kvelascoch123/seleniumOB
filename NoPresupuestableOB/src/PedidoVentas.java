@@ -22,11 +22,13 @@ public class PedidoVentas {
 		System.out.println("*************************************");
 		System.out.println("******** PEDIDO DE VENTAS ***********"); 
 		System.out.println("*************************************");
+		driver.manage().window().maximize();
+
 		helper.sleep(1);
 		urlParam = urlOB;
 		// REPETIR EL PROCESO SEGUN EL NUMERO DE VECES DE ASIGNACION por JOPTIONPANE
 		int ejecutadas = 0;
-		
+
 		for (int i = 1; i <= numeroPruebas; i++) {
 			System.out.println("Número de Pedido de Venta: " + i);
 			int repeticionesParam = numeroPruebas - i;
@@ -153,9 +155,9 @@ public class PedidoVentas {
 		//driver.findElement(By.xpath("//*[@class='OBToolbarIconButton_icon_save OBToolbarIconButton']")).click();
 		//helper.sleep(2); // cargando...
 
-			if (driver.findElements(By.xpath("//*[text()='Create One']")).size() > 0) {
+			//if (driver.findElements(By.xpath("//*[text()='Create One']")).size() > 0) {
 				agregarLineas(driver, urlParam);
-				}
+			//	}
 	//} 
 	}
 	public void agregarLineas(WebDriver driver, String UrlParam) { // agregar productos al pedido de venta

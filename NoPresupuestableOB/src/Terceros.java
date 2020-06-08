@@ -22,7 +22,7 @@ import org.openqa.selenium.WebElement;
 public class Terceros {
 	public static void crearTerceros(WebDriver driver, String urlParam, String nombreTercero) throws InterruptedException {
 		System.out.println("*************************************");
-		System.out.println("******* Creación de Terceros ********"); 
+		System.out.println("******* CreaciÃ³n de Terceros ********"); 
 		System.out.println("*************************************");
 		JSONParser parser = new JSONParser();
 		Object obj;
@@ -36,11 +36,27 @@ public class Terceros {
 		if(driver.findElements(By.xpath("//*[@id='isc_F']")).size() <= 0){
 			Thread.sleep(7000);
 		}
-		driver.findElement(By.xpath("//*[@id='isc_F']")).click();
-		driver.findElement(By.xpath("//*[text()='Gestión de Datos Maestros']")).click(); 
+		/*driver.findElement(By.xpath("//*[@id='isc_F']")).click();
+		driver.findElement(By.xpath("//*[text()='GestiÃ³n de Datos Maestros']")).click(); 
 		driver.findElement(By.xpath("//nobr[text()='Terceros']")).click();
-		Thread.sleep(3000);
-		driver.findElement(By.xpath("//*[@class='OBToolbarIconButton_icon_newDoc OBToolbarIconButton']")).click();
+		*/
+		WebElement aplication = driver.findElement(By.xpath("//img[@name='isc_Bmain']"));
+		aplication.click();
+		Thread.sleep(1000);
+		WebElement valor = driver.findElement(By.xpath("//input[@name='value']"));
+		valor.sendKeys("Terceros");
+		Thread.sleep(1000);
+		//System.out.println(valor.findElement(By.xpath("//*[text()='Pago']")));
+		// Buscar una etiqueta hija dentro la etiqueta padre
+		valor.sendKeys(Keys.DOWN);
+		valor.sendKeys(Keys.DOWN);
+		valor.sendKeys(Keys.DOWN);
+		valor.sendKeys(Keys.DOWN);
+		valor.sendKeys(Keys.DOWN);
+
+		valor.sendKeys(Keys.ENTER);
+
+		Thread.sleep(9000);
 		System.out.println("Datos del tercero: ");
 		// Llenar datos del usuario
 		/**************CARGANDO DATOS DEL USUARIO DEL TXT ************/
@@ -61,6 +77,8 @@ public class Terceros {
 		
 	// FORMULARIO CABECERA CREACION DE TERCEROS
 	public static void formulario(WebDriver driver, String UrlParam, int contadorJSON) throws InterruptedException {
+		driver.findElement(By.xpath("//*[@class='OBToolbarIconButton_icon_newDoc OBToolbarIconButton']")).click();
+
 		JSONParser parser = new JSONParser();
 		Object obj;
 		try {
@@ -243,7 +261,7 @@ public class Terceros {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//*[@class='OBToolbarTextButtonParent' and text()='et New Currency']")).click();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//input[@name='C_Currency_ID']")).sendKeys("USD");
+		driver.findElement(By.xpath("//input[@name='C_Currency_ID']")).sendKeys("USD", Keys.ENTER );
 		Thread.sleep(2000);
 		WebElement checkSetAmount = driver.findElement(By.xpath("//*[@class='OBFormFieldLabelRequired']//span"));
 		if(checkSetAmount.isSelected()){
