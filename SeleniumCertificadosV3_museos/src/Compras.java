@@ -26,7 +26,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class Compras {
 	Helpers helper = new Helpers();
 	String urlParam; 
-	public void generarCompras(WebDriver driver, String urlOB, int numeroRepeticionesProceso) throws InterruptedException { // Pedido de Venta => FACTURA LIBRO
+	public void generarCompras(WebDriver driver, String urlOB, int numeroRepeticionesProceso, int numDocFacturaProv) throws InterruptedException { // Pedido de Venta => FACTURA LIBRO
 		System.out.println("*************************************");
 		System.out.println("************ COMPRAS ****************"); // HECHO EN MUSEOS
 		System.out.println("*************************************");
@@ -34,11 +34,11 @@ public class Compras {
 		helper.sleep(2);
 		urlParam = urlOB;
 		helper.buscarVentana(driver,"Factura (Proveedor)");
-		crearCompra(driver, urlOB, numeroRepeticionesProceso);
+		crearCompra(driver, urlOB, numeroRepeticionesProceso, numDocFacturaProv);
 		
 	}
 	
-	public void crearCompra(WebDriver driver, String UrlParam, int repeticion) throws InterruptedException{ // VALIDAR EL HTML CARGADO
+	public void crearCompra(WebDriver driver, String UrlParam, int repeticion, int numDocFacturaProv) throws InterruptedException{ // VALIDAR EL HTML CARGADO
 		//DIRECTORIO DEL/ LOS ARCHIVOs JSON
 		helper.sleep(6);
 		if (driver.findElements(By.xpath("//*[@class='OBGridHeaderCellTitle' and text()='Organización']"))
@@ -47,9 +47,9 @@ public class Compras {
 			System.out.println("Tengo q esperar q cargue el html");
 		} 
 			helper.sleep(5);
-			asignarDatos(driver, UrlParam, repeticion); // llenar formulario			
+			asignarDatos(driver, UrlParam, repeticion, numDocFacturaProv); // llenar formulario			
 	}
-	public void asignarDatos(WebDriver driver, String UrlParam, int repeticion) throws InterruptedException{
+	public void asignarDatos(WebDriver driver, String UrlParam, int repeticion, int numDocFacturaProv) throws InterruptedException{
 		int attemptsBCDA = 0;
 		while (attemptsBCDA < 2) {
 			try {
@@ -113,7 +113,9 @@ try {
 			helper.sleep(1);
 			WebElement inpNumeroReferencia = driver.findElement(By.xpath("//div[@class='OBViewForm']//input[@type='TEXT' and @name='orderReference']")); 
 			inpNumeroReferencia.clear();
-				inpNumeroReferencia.sendKeys("000-000-00000000"+repeticion);
+				//inpNumeroReferencia.sendKeys("000-000-00000000"+repeticion);
+				inpNumeroReferencia.sendKeys("000-000-0000000"+(numDocFacturaProv+repeticion));
+
 				helper.sleep(1);
 	
 		} catch (org.openqa.selenium.StaleElementReferenceException ex) {
@@ -136,9 +138,10 @@ try {
 			helper.sleep(1);
 			WebElement inpNumeroReferencia = driver.findElement(By.xpath("//div[@class='OBViewForm']//input[@type='TEXT' and @name='orderReference']")); 
 			inpNumeroReferencia.clear();
-			inpNumeroReferencia.sendKeys("000-000-00000000"+repeticion);
+			//inpNumeroReferencia.sendKeys("000-000-00000000"+repeticion);
+			inpNumeroReferencia.sendKeys("000-000-0000000"+(numDocFacturaProv+repeticion));
+
 			helper.sleep(1);
-				
 		}
 		
 		try {
@@ -153,10 +156,10 @@ try {
 			}
 			
 			Random rnd = new Random();
-			int serialAuth = rnd.nextInt() * 10+1; 
+			int serialAuth = rnd.nextInt(999999999) ; 
 			WebElement inpNumAuth = driver.findElement(By.xpath("//div[@class='OBViewForm']//input[@type='TEXT' and @name='sswhNroauthorization']"));
 			inpNumAuth.clear();
-			inpNumAuth.sendKeys(""+serialAuth+"");
+			inpNumAuth.sendKeys(""+serialAuth+"2");
 			inpNumAuth.sendKeys(Keys.ENTER);
 			helper.myScroll(driver, "//div[@class='OBViewForm']//input[@type='TEXT' and @name='sfbHashCode']");
 			helper.sleep(1);
@@ -195,10 +198,10 @@ try {
 			}
 			
 			Random rnd = new Random();
-			int serialAuth = rnd.nextInt() * 10+1; 
+			int serialAuth = rnd.nextInt(999999999); 
 			WebElement inpNumAuth = driver.findElement(By.xpath("//div[@class='OBViewForm']//input[@type='TEXT' and @name='sswhNroauthorization']"));
 			inpNumAuth.clear();
-			inpNumAuth.sendKeys(""+serialAuth+"");
+			inpNumAuth.sendKeys(""+serialAuth+"8");
 			inpNumAuth.sendKeys(Keys.ENTER);
 			helper.myScroll(driver, "//div[@class='OBViewForm']//input[@type='TEXT' and @name='sfbHashCode']");
 			helper.sleep(1);
@@ -286,7 +289,7 @@ try {
 
 } catch (Exception e) {
 	driver.navigate().to(UrlParam);
-	generarCompras(driver, UrlParam, attemptsBCDA);
+	generarCompras(driver, UrlParam, attemptsBCDA,numDocFacturaProv);
 }
 		
 helper.sleep(2);
@@ -362,10 +365,12 @@ validarFormulario(driver, UrlParam);
 						"//*[@class='Button_text Button_width' and text()='Aceptar']"))
 						.click();
 				
+				helper.sleep(4);
 		System.out.println("*************************************************************************");
 		System.out.println("************ FIN DEL PROCESO COMPRAS Factura(proveedor)****************");
 		System.out.println("*************************************************************************");
 		driver.navigate().to(UrlParam);	
+		
 	}
 }
 

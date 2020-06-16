@@ -1,0 +1,65 @@
+{
+	"Organizacion":{
+			"1": { "Nombre" : "Museos"}
+			},	
+	"Terceros":{
+			"1":{ "Nombre" : "SIDESOFT CIA LTDA" }		
+	},
+	"DescripcionC":{
+			"1":{"Descripcion" : "servicios prestados"}		
+	},
+
+	"Actividades":{
+			"1":{
+			"Actividad":"12.03 Contratación de Servicios FMC",
+			},
+
+	},
+	"Lineas":{
+		"1":{ 
+			"Producto": "12 GESTIÓN OPERATIVA FMC",	
+			},
+
+	},
+	"Retenciones":{
+			"1":{"Retencion" : "RETENCIONES 4009"}		
+	},
+	"TiposComprobante":{
+		"1":{
+		"Comprobante":"01 - FACTURA"
+		},
+	},
+	"CodigosSustento":{
+		"1":{
+		"Codigo":"02-COSTO O GASTO PARA DECLARACION DE IR (MENOS ACTIVOS FIJOS)"
+		},
+		
+	},
+	"FuenteFinanciamiento":{
+			"1":{
+				"Financiamiento":"M1",
+				},
+		},
+	"CodesHash":{
+		"1":{
+			"Codigo":"A4JZRGK7AT",
+		},
+	},
+	"LineaCertificado":{
+		"1":{
+			"Certificado":"770201 SEGUROS",
+		},
+	},
+	"PartidaPresupuestaria":{
+		"1":{
+		"Linea":"1524001001-SEGUROS -322",
+		},
+	},
+	"Productos":{
+		"1":{ 
+			"Producto": "12 GESTIÓN OPERATIVA FMC",	
+			},
+	
+	}		
+}
+

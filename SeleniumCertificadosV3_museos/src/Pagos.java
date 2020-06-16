@@ -54,28 +54,11 @@ public class Pagos {
 		valor.sendKeys(Keys.DOWN);
 		valor.sendKeys(Keys.DOWN);
 		valor.sendKeys(Keys.DOWN);
+		valor.sendKeys(Keys.DOWN);
 		valor.sendKeys(Keys.ENTER);
-
 		helper.sleep(5);
 		formulario(driver, urlOB);
-		/*
-		System.out.println("*************************************");
-		System.out.println("************** Pagos ****************"); // HECHO EN MUSEOS
-		System.out.println("*************************************");
-		driver.manage().window().maximize();
-		helper.sleep(2);
-		urlParam = urlOB;
-		 
-		Thread.sleep(10000);
-		WebElement aplication = driver.findElement(By.xpath("//img[@name='isc_Bmain']"));
-		aplication.click();
-		Thread.sleep(1000);
-		WebElement valor = driver.findElement(By.xpath("//input[@name='value']"));
-		// Buscar una etiqueta hija dentro la etiqueta padre
-		valor.findElement(By.xpath("//*[text()='Pago']")).click(); 
-		*/
-		helper.sleep(3);
-		formulario(driver, urlOB);
+
 	}//input[@name='referenceNo' and @class='OBFormFieldInputRequired']
 	public static void formulario(WebDriver driver, String urlOB) throws InterruptedException {
 		System.out.println("Cargando JSON ...formulario en proceso.");

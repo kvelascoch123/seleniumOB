@@ -186,9 +186,9 @@ public class PedidoCompra {
 				inpProducto.sendKeys(Keys.ENTER);
 				
 				helper.sleep(2);
-				helper.myScroll(driver, "//*[@class='OBFormFieldInput' and @name='sfbHashCode']");
+				helper.myScroll(driver, "//td[@class='OBFormField']//input[@class='OBFormFieldInput' and @name='sfbHashCode']");
 				WebElement inpHashCode = driver
-						.findElement(By.xpath("//*[@class='OBFormFieldInput' and @name='sfbHashCode']")); // agregar
+						.findElement(By.xpath("//td[@class='OBFormField']//input[@class='OBFormFieldInput' and @name='sfbHashCode']")); // agregar
 				inpHashCode.clear();
 				inpHashCode.sendKeys((String) posicionCodesHash.get("Codigo"));
 				inpHashCode.sendKeys(Keys.ENTER);
@@ -204,11 +204,18 @@ public class PedidoCompra {
 				inpActividad.sendKeys(Keys.TAB);
 
 			} catch (org.openqa.selenium.StaleElementReferenceException ex) {
-				// TODO: handle exception
+				helper.sleep(1);
+				helper.myScroll(driver, "//*[@class='OBFormFieldSelectInputRequired' and @name='sfbBudgetArea']");
+				WebElement inpProducto = driver.findElement(
+						By.xpath("//*[@class='OBFormFieldSelectInputRequired' and @name='sfbBudgetArea']")); // agregar
+				inpProducto.clear();
+				inpProducto.sendKeys((String) posicionProducto.get("Producto"));
+				inpProducto.sendKeys(Keys.ENTER);
+				
 				helper.sleep(2);
-				helper.myScroll(driver, "//*[@class='OBFormFieldInput' and @name='sfbHashCode']");
+				helper.myScroll(driver, "//td[@class='OBFormField']//input[@class='OBFormFieldInput' and @name='sfbHashCode']");
 				WebElement inpHashCode = driver
-						.findElement(By.xpath("//*[@class='OBFormFieldInput' and @name='sfbHashCode']")); // agregar
+						.findElement(By.xpath("//td[@class='OBFormField']//input[@class='OBFormFieldInput' and @name='sfbHashCode']")); // agregar
 				inpHashCode.clear();
 				inpHashCode.sendKeys((String) posicionCodesHash.get("Codigo"));
 				inpHashCode.sendKeys(Keys.ENTER);
@@ -250,8 +257,7 @@ public class PedidoCompra {
 			driver.navigate().to(urlOB);
 			generarPedidoCompra(driver, urlOB);
 		}
-			}
-
+	}
 public static void validarFormulario(WebDriver driver, String UrlParam, String numeroDocumento) {// validar
 	System.out.println("Validando los datos del formulario cabecera");
 	Helpers helper = new Helpers();
