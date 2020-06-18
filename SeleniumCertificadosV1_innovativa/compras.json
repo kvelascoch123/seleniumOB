@@ -1,0 +1,70 @@
+{
+	"Organizacion":{
+			"1": { "Nombre" : "Innovativa"}
+			},	
+	"Terceros":{
+			"1":{ "Nombre" : "SIDESOFT CIA LTDA" }		
+	},
+	"DescripcionC":{
+			"1":{"Descripcion" : "servicios prestados"}		
+	},
+
+	"Actividades":{
+			"1":{
+			"Actividad":"2-GESTION INVESTIGACION Y TRANSF TECNOLO",
+			},
+
+	},
+	"Lineas":{
+		"1":{ 
+			"Producto": "PROYECTOS - PROYECTOS",	
+			},
+
+	},
+	"Retenciones":{
+			"1":{"Retencion" : ""}		
+	},
+	"TiposComprobante":{
+		"1":{
+		"Comprobante":"01-FACTURA"
+		},
+	},
+	"CodigosSustento":{
+		"1":{
+		"Codigo":"02-COSTO O GASTO PARA DECLARACION DE IR (MENOS ACTIVOS FIJOS)"
+		},
+		
+	},
+	"FuenteFinanciamiento":{
+			"1":{
+				"Financiamiento":"2.41 ACTUALIZACIÓN DEL REGISTRO SOCIAL TERRITORIO 6",
+				},
+		},
+	"CodesHash":{
+		"1":{
+			"Codigo":"2STRA7NA4F",
+		},
+	},
+	"LineaCertificado":{
+		"1":{
+			"Certificado":"730204 - 730204 EDIC IMPRES  REPRODUC PUBLICAC IMAGENES SATELITALES",
+		},
+	},
+	"LineaNeg":{
+		"1":{
+		"LineaNegocio":"2.41 ACTUALIZACIÓN DEL REGISTRO SOCIAL TERRITORIO 6",
+		},
+	},
+	"PartidaPresupuestaria":{
+		"1":{
+		"Linea":"151.32.04 EDICION IMPR REPR REE  309 1%",
+		},
+	},
+	"Productos":{
+		"1":{ 
+			"Producto": "PROYECTOS - PROYECTOS",	
+			},
+	
+	}		
+}
+
